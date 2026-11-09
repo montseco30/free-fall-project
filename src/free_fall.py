@@ -33,7 +33,7 @@ def run_all_simulations(masses, drag_coefs):
             results.append({
                 "mass": m,
                 "drag": d,
-                "fall_time": round(fall_time, 3)
+                "fall_time": round(fall_time, 3),
                 "terminal_velocity": round(final_velocity, 3)
             })
     return results
