@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+*.out
+*.err
+*.csv
+.DS_Store

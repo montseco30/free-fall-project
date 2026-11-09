@@ -1,0 +1,22 @@
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yml
+          environment-name: freefall-env
+          cache-environment: true
+        
+      - name: Run Pytest
+        shell: micromamba-shell{0}
+        run: |
+          pytest tests/
