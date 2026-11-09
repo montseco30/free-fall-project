@@ -8,7 +8,6 @@
 #SBATCH --time=00:20:00
 #SBATCH --mem=2GB
 #SBATCH --output=free_fall_%j.out
-#SBATCH --error=free_fall_%.err
-
+#SBATCH --error=free_fall_%j.err
 
 ~/.envs/freefall-env/bin/python src/free_fall.py

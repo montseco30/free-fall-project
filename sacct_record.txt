@@ -1,0 +1,5 @@
+JobID           JobName  Partition  AllocCPUS    Elapsed      State ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+65761922     free_fall+   standard          1   00:00:13  COMPLETED      0:0 
+65761922.ba+      batch                     1   00:00:13  COMPLETED      0:0 
+65761922.ex+     extern                     1   00:00:13  COMPLETED      0:0 
