@@ -1,22 +1,21 @@
-name: CI Pipeline
+name: Continuous Integration
 
 on: [push, pull_request]
 
 jobs:
-  test:
+  pytest-ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v1
-        with:
+      - name: Setup Micromamba Environment
+        uses: mamba-org/setup-micromamba@v2
+        with: 
           environment-file: environment.yml
-          environment-name: freefall-env
-          cache-environment: true
-        
+          generate-run-shell: true
+
       - name: Run Pytest
-        shell: micromamba-shell{0}
-        run: |
-          pytest tests/
+        shell: micromamba-shell {0}
+        run: | 
+          PYTHONPATH=. pytest
