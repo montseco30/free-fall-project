@@ -11,10 +11,4 @@
 #SBATCH --error=free_fall_%.err
 
 
-module load python/3.14.7
-
-source ~/.bashrc
-
-mamba activate freefall-env
-
-python src/free_fall.py
+~/.envs/freefall-env/bin/python src/free_fall.py
